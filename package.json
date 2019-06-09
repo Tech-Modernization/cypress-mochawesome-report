@@ -7,8 +7,9 @@
     "e2e": "cypress run --record false --reporter mocha-multi-reporters --reporter-options configFile=cypress.json ",
     "merge-results": "mochawesome-merge --reportDir cypress/results > mochawesome.json",
     "generate-report": "npx mochawesome-report-generator mochawesome.json",
-    "test": "npm-run-all -s delete:reports e2e merge-results generate-report",
-    "delete:reports": "rm cypress/results/* || true"
+    "test": "npm-run-all -s delete:reports e2e merge-results generate-report gallery",
+    "delete:reports": "rm cypress/results/* || true",
+    "gallery" : "npx thumbsup --input cypress/screenshots --output cypress/reports"
   },
   "keywords": [],
   "author": "",
