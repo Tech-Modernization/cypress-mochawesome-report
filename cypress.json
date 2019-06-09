@@ -7,6 +7,5 @@
     "html": false,
     "json": true
   },
-  "reporter":"mochawesome",
-  "video": false
+  "reporter":"mochawesome"
 }

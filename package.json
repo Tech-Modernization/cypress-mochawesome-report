@@ -5,12 +5,12 @@
   "license": "MIT",
   "scripts": {
     "test": "npm-run-all -s delete:reports e2e merge-results generate-report gallery open-reports",
-    "e2e": "cypress run --record false --reporter mocha-multi-reporters --reporter-options configFile=cypress.json ",
+    "e2e": "cypress run --reporter mocha-multi-reporters --reporter-options configFile=cypress.json ",
     "merge-results": "mochawesome-merge --reportDir cypress/results > mochawesome.json",
     "generate-report": "npx mochawesome-report-generator mochawesome.json",
     "open-reports" :"open cypress/reports/index.html; open mochawesome-report/mochawesome.html",
     "delete:reports": "rm cypress/results/* || true",
-    "gallery" : "npx thumbsup --input cypress/screenshots --output cypress/reports"
+    "gallery" : "npx thumbsup --input cypress --output cypress/reports"
   },
   "keywords": [],
   "author": "",
