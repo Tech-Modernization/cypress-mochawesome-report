@@ -1,0 +1,1 @@
+Minimal repo demonstrating Cypress report generation with Mochawesome
