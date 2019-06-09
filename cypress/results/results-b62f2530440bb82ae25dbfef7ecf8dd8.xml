@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.203" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-06-09T17:41:32" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Viewport" timestamp="2019-06-09T17:41:32" tests="1" failures="0" time="4.203">
+    <testcase name="Viewport cy.viewport() - set the viewport size and dimension" time="4.203" classname="cy.viewport() - set the viewport size and dimension">
+    </testcase>
+  </testsuite>
+</testsuites>

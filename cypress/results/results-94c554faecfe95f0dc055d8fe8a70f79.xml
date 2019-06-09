@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.178" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-06-09T17:39:20" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Location" timestamp="2019-06-09T17:39:20" tests="3" failures="0" time="4.178">
+    <testcase name="Location cy.hash() - get the current URL hash" time="1.358" classname="cy.hash() - get the current URL hash">
+    </testcase>
+    <testcase name="Location cy.location() - get window.location" time="1.763" classname="cy.location() - get window.location">
+    </testcase>
+    <testcase name="Location cy.url() - get the current URL" time="1.057" classname="cy.url() - get the current URL">
+    </testcase>
+  </testsuite>
+</testsuites>

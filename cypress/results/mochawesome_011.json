@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-06-09T17:40:16.289Z",
+    "end": "2019-06-09T17:40:29.992Z",
+    "duration": 13703,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ac200083-8dd3-4013-bce4-5a4a99a3f61d",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7b8f77e9-0924-4865-b49c-32fca6cc7286",
+          "title": "Network Requests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.server() - control behavior of network requests and responses",
+              "fullTitle": "Network Requests cy.server() - control behavior of network requests and responses",
+              "timedOut": null,
+              "duration": 928,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/server\ncy.server().should(function (server) {\n  // the default options on server\n  // you can override any of these options\n  expect(server.delay).to.eq(0);\n  expect(server.method).to.eq('GET');\n  expect(server.status).to.eq(200);\n  expect(server.headers).to.be.null;\n  expect(server.response).to.be.null;\n  expect(server.onRequest).to.be.undefined;\n  expect(server.onResponse).to.be.undefined;\n  expect(server.onAbort).to.be.undefined; // These options control the server behavior\n  // affecting all requests\n  // pass false to disable existing route stubs\n  expect(server.enable).to.be.true; // forces requests that don't match your routes to 404\n  expect(server.force404).to.be.false; // whitelists requests from ever being logged or stubbed\n  expect(server.whitelist).to.be.a('function');\n});\ncy.server({\n  method: 'POST',\n  delay: 1000,\n  status: 422,\n  response: {}\n}); // any route commands will now inherit the above options\n// from the server. anything we pass specifically\n// to route will override the defaults though.",
+              "err": {},
+              "uuid": "5de0ff7d-3fe6-41df-8d5c-5ad363cf3e3e",
+              "parentUUID": "7b8f77e9-0924-4865-b49c-32fca6cc7286",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.request() - make an XHR request",
+              "fullTitle": "Network Requests cy.request() - make an XHR request",
+              "timedOut": null,
+              "duration": 1886,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/request\ncy.request('https://jsonplaceholder.cypress.io/comments').should(function (response) {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.length(500);\n  expect(response).to.have.property('headers');\n  expect(response).to.have.property('duration');\n});",
+              "err": {},
+              "uuid": "8e3139f9-feef-429c-a9a3-97a678f9ae7d",
+              "parentUUID": "7b8f77e9-0924-4865-b49c-32fca6cc7286",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.request() - verify response using BDD syntax",
+              "fullTitle": "Network Requests cy.request() - verify response using BDD syntax",
+              "timedOut": null,
+              "duration": 2247,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('https://jsonplaceholder.cypress.io/comments').then(function (response) {\n  // https://on.cypress.io/assertions\n  expect(response).property('status').to.equal(200);\n  expect(response).property('body').to.have.length(500);\n  expect(response).to.include.keys('headers', 'duration');\n});",
+              "err": {},
+              "uuid": "305303fc-9ec1-4715-bbf0-ee4556a3792f",
+              "parentUUID": "7b8f77e9-0924-4865-b49c-32fca6cc7286",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.request() with query parameters",
+              "fullTitle": "Network Requests cy.request() with query parameters",
+              "timedOut": null,
+              "duration": 1982,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// will execute request\n// https://jsonplaceholder.cypress.io/comments?postId=1&id=3\ncy.request({\n  url: 'https://jsonplaceholder.cypress.io/comments',\n  qs: {\n    postId: 1,\n    id: 3\n  }\n}).its('body').should('be.an', 'array').and('have.length', 1).its('0') // yields first element of the array\n.should('contain', {\n  postId: 1,\n  id: 3\n});",
+              "err": {},
+              "uuid": "f1507ff9-2f4e-4717-b82a-9c322f95a47b",
+              "parentUUID": "7b8f77e9-0924-4865-b49c-32fca6cc7286",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.route() - route responses to matching requests",
+              "fullTitle": "Network Requests cy.route() - route responses to matching requests",
+              "timedOut": null,
+              "duration": 3348,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/route\nvar message = 'whoa, this comment does not exist';\ncy.server(); // Listen to GET to comments/1\ncy.route('GET', 'comments/*').as('getComment'); // we have code that gets a comment when\n// the button is clicked in scripts.js\ncy.get('.network-btn').click(); // https://on.cypress.io/wait\ncy.wait('@getComment').its('status').should('eq', 200); // Listen to POST to comments\ncy.route('POST', '/comments').as('postComment'); // we have code that posts a comment when\n// the button is clicked in scripts.js\ncy.get('.network-post').click();\ncy.wait('@postComment'); // get the route\ncy.get('@postComment').should(function (xhr) {\n  expect(xhr.requestBody).to.include('email');\n  expect(xhr.requestHeaders).to.have.property('Content-Type');\n  expect(xhr.responseBody).to.have.property('name', 'Using POST in cy.route()');\n}); // Stub a response to PUT comments/ ****\ncy.route({\n  method: 'PUT',\n  url: 'comments/*',\n  status: 404,\n  response: {\n    error: message\n  },\n  delay: 500\n}).as('putComment'); // we have code that puts a comment when\n// the button is clicked in scripts.js\ncy.get('.network-put').click();\ncy.wait('@putComment'); // our 404 statusCode logic in scripts.js executed\ncy.get('.network-put-comment').should('contain', message);",
+              "err": {},
+              "uuid": "98da8afb-18fa-4582-aa36-6e619084e8e0",
+              "parentUUID": "7b8f77e9-0924-4865-b49c-32fca6cc7286",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5de0ff7d-3fe6-41df-8d5c-5ad363cf3e3e",
+            "8e3139f9-feef-429c-a9a3-97a678f9ae7d",
+            "305303fc-9ec1-4715-bbf0-ee4556a3792f",
+            "f1507ff9-2f4e-4717-b82a-9c322f95a47b",
+            "98da8afb-18fa-4582-aa36-6e619084e8e0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10391,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "5.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "useInlineDiffs": false
+      },
+      "version": "4.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "mochaFile": "cypress/results/results-[hash].xml",
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.0.0"
+    }
+  }
+}

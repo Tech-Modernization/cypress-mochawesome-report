@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.455" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-06-09T17:38:20" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Connectors" timestamp="2019-06-09T17:38:20" tests="5" failures="0" time="4.455">
+    <testcase name="Connectors .each() - iterate over an array of elements" time="0.633" classname=".each() - iterate over an array of elements">
+    </testcase>
+    <testcase name="Connectors .its() - get properties on the current subject" time="0.669" classname=".its() - get properties on the current subject">
+    </testcase>
+    <testcase name="Connectors .invoke() - invoke a function on the current subject" time="0.872" classname=".invoke() - invoke a function on the current subject">
+    </testcase>
+    <testcase name="Connectors .spread() - spread an array as individual args to callback function" time="1.151" classname=".spread() - spread an array as individual args to callback function">
+    </testcase>
+    <testcase name="Connectors .then() - invoke a callback function with the current subject" time="1.13" classname=".then() - invoke a callback function with the current subject">
+    </testcase>
+  </testsuite>
+</testsuites>
