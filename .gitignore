@@ -1,0 +1,6 @@
+yarn-error.log
+mochawesome-report
+cypress/results
+mochawesome.json
+cypress/screenshots
+cypress/videos
